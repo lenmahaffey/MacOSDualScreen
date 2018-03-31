@@ -15,6 +15,7 @@
 		7F8FB32B206C68AF005F73C9 /* OSXDualScreenUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F8FB32A206C68AF005F73C9 /* OSXDualScreenUITests.swift */; };
 		7F8FB339206C6E10005F73C9 /* displayWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F8FB338206C6E10005F73C9 /* displayWindowController.swift */; };
 		7F8FB33D206C6E8F005F73C9 /* displayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F8FB33C206C6E8F005F73C9 /* displayViewController.swift */; };
+		7F94CDF2206CA03E000F2104 /* displayViewWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F94CDF1206CA03E000F2104 /* displayViewWindow.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +51,7 @@
 		7F8FB32C206C68AF005F73C9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7F8FB338206C6E10005F73C9 /* displayWindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = displayWindowController.swift; sourceTree = "<group>"; };
 		7F8FB33C206C6E8F005F73C9 /* displayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = displayViewController.swift; sourceTree = "<group>"; };
+		7F94CDF1206CA03E000F2104 /* displayViewWindow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = displayViewWindow.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +105,7 @@
 				7F8FB30C206C68AF005F73C9 /* AppDelegate.swift */,
 				7F8FB338206C6E10005F73C9 /* displayWindowController.swift */,
 				7F8FB33C206C6E8F005F73C9 /* displayViewController.swift */,
+				7F94CDF1206CA03E000F2104 /* displayViewWindow.swift */,
 				7F8FB30E206C68AF005F73C9 /* ViewController.swift */,
 				7F8FB310206C68AF005F73C9 /* Assets.xcassets */,
 				7F8FB312206C68AF005F73C9 /* Main.storyboard */,
@@ -267,6 +270,7 @@
 				7F8FB30D206C68AF005F73C9 /* AppDelegate.swift in Sources */,
 				7F8FB339206C6E10005F73C9 /* displayWindowController.swift in Sources */,
 				7F8FB33D206C6E8F005F73C9 /* displayViewController.swift in Sources */,
+				7F94CDF2206CA03E000F2104 /* displayViewWindow.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
