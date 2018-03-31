@@ -13,12 +13,6 @@ class displayWindowController: NSWindowController {
 
     override func windowWillLoad() {
         super.windowWillLoad()
-        
-        var displays = [CGDirectDisplayID](repeating: 0, count: Int(2))
-        var displayCount: UInt32 = 2
-        _ = CGGetOnlineDisplayList(2, &displays, &displayCount)
-        print(type(of:displays))
-
     }
     
     override func windowDidLoad() {
