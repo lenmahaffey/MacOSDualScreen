@@ -7,12 +7,23 @@
 //
 
 import Cocoa
+import QuartzCore
 
 class displayWindowController: NSWindowController {
 
+    override func windowWillLoad() {
+        super.windowWillLoad()
+        
+        var displays = [CGDirectDisplayID](repeating: 0, count: Int(2))
+        var displayCount: UInt32 = 2
+        _ = CGGetOnlineDisplayList(2, &displays, &displayCount)
+        print(type(of:displays))
+
+    }
+    
     override func windowDidLoad() {
         super.windowDidLoad()
-        // Implement this method to handle any initialization after your window controller's window has been loaded from its nib file.
+        
         let screens = NSScreen.screens
         if screens.count == 1 {
             //self.window?.toggleFullScreen(nil)
