@@ -17,12 +17,7 @@ class displayWindowController: NSWindowController {
     
     override func windowDidLoad() {
         super.windowDidLoad()
-        
-        let screens = NSScreen.screens
-        if screens.count == 1 {
-            //self.window?.toggleFullScreen(nil)
-            self.showWindow(nil)
-        }
+        self.showWindow(nil)
     }
 
 }
