@@ -20,14 +20,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     }
 
     func applicationDidChangeScreenParameters(_ notification: Notification) {
-        let screens = NSScreen.screens
-        if screens.count > 1 {
-            print("Screen Connected")
-
-        }
-        if screens.count == 1 {
-            print("Screen Disconected")
-        }
+        
     }
 }
 
