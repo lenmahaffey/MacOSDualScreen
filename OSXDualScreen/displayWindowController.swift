@@ -25,5 +25,4 @@ class displayWindowController: NSWindowController {
         self.window?.toggleFullScreen(self)
         self.showWindow(self)
     }
-
 }
