@@ -9,7 +9,7 @@
 import Cocoa
 
 class displayWindowController: NSWindowController {
-
+    
     override func windowWillLoad() {
         super.windowWillLoad()
     }
@@ -19,6 +19,7 @@ class displayWindowController: NSWindowController {
         if NSScreen.screens.count > 1 {
             showWindowOnExtendedDesktop()
         }
+        
     }
 
     func showWindowOnExtendedDesktop() {
@@ -28,4 +29,5 @@ class displayWindowController: NSWindowController {
         self.window?.toggleFullScreen(self)
         self.showWindow(self)
     }
+
 }
