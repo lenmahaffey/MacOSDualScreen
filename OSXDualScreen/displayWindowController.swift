@@ -16,15 +16,16 @@ class displayWindowController: NSWindowController {
     
     override func windowDidLoad() {
         super.windowDidLoad()
-        
+        if NSScreen.screens.count > 1 {
+            showWindowOnExtendedDesktop()
+        }
+    }
+
+    func showWindowOnExtendedDesktop() {
         self.window?.setFrame(NSScreen.screens[1].frame, display: true)
         self.window?.toggleTabBar(self)
         self.window?.backgroundColor = NSColor(srgbRed: 0, green: 0, blue: 0, alpha: 1)
         self.window?.toggleFullScreen(self)
         self.showWindow(self)
-    }
-
-    func showWindowOnExtendedDesktop() {
-        
     }
 }
