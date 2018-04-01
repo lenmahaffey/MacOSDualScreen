@@ -31,11 +31,9 @@ class ViewController: NSViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
-        let storyboardName = NSStoryboard.Name(rawValue: "Main")
-        let storyboard = NSStoryboard(name: storyboardName, bundle: nil)
-        let storyboardSceneID = NSStoryboard.SceneIdentifier(rawValue: "displayWindowController")
-        _ = storyboard.instantiateController(withIdentifier: storyboardSceneID) as! NSWindowController
+        if NSScreen.screens.count > 1 {
+            displayWindowController.showWindowOnExtendedDesktop()
+        }
     }
 
     @objc func monitorDidChange(notification: NSNotification) {
