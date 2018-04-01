@@ -7,7 +7,6 @@
 //
 
 import Cocoa
-import QuartzCore
 
 class displayWindowController: NSWindowController {
 
