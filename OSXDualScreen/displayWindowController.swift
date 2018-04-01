@@ -16,10 +16,6 @@ class displayWindowController: NSWindowController {
     
     override func windowDidLoad() {
         super.windowDidLoad()
-        if NSScreen.screens.count > 1 {
-            showWindowOnExtendedDesktop()
-        }
-        
     }
 
     func showWindowOnExtendedDesktop() {
