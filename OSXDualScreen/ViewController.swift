@@ -9,15 +9,15 @@
 import Cocoa
 
 class ViewController: NSViewController {
-
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
         // Do any additional setup after loading the view.
         let storyboardName = NSStoryboard.Name(rawValue: "Main")
         let storyboard = NSStoryboard(name: storyboardName, bundle: nil)
         let storyboardSceneID = NSStoryboard.SceneIdentifier(rawValue: "displayWindowController")
-        let displayWindowController = storyboard.instantiateController(withIdentifier: storyboardSceneID) as! NSWindowController
+        _ = storyboard.instantiateController(withIdentifier: storyboardSceneID) as! NSWindowController
     }
 
     override var representedObject: Any? {
@@ -25,7 +25,5 @@ class ViewController: NSViewController {
         // Update the view, if already loaded.
         }
     }
-
-
 }
 
