@@ -10,5 +10,4 @@ import Cocoa
 
 class displayViewWindow: NSWindow {
 
-
 }
