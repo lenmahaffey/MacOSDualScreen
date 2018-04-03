@@ -8,14 +8,9 @@
 
 import Cocoa
 
-class ViewController: NSViewController {
+class controlViewController: NSViewController {
     
-    var displayWindowController: displayWindowController {
-        let storyboard = NSStoryboard(name: NSStoryboard.Name(rawValue: "Main"), bundle: nil)
-        let storyboardSceneID = NSStoryboard.SceneIdentifier(rawValue: "displayWindowController")
-        let wc = storyboard.instantiateController(withIdentifier: storyboardSceneID) as! displayWindowController
-        return wc
-    }
+    var displayWindowControl: displayWindowController? = nil
     
     required init?(coder: NSCoder){
         super.init(coder: coder)
@@ -24,24 +19,33 @@ class ViewController: NSViewController {
             selector: #selector(monitorDidChange),
             name:  NSApplication.didChangeScreenParametersNotification,
             object: nil)
+        let storyboard = NSStoryboard(name: NSStoryboard.Name(rawValue: "Main"), bundle: nil)
+        let storyboardSceneID = NSStoryboard.SceneIdentifier(rawValue: "displayWindowController")
+        displayWindowControl = (storyboard.instantiateController(withIdentifier: storyboardSceneID) as! displayWindowController)
     }
     
     override func viewWillAppear() {
+        
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        if NSScreen.screens.count == 1 {
+            displayWindowControl?.window?.close()
+        }
         if NSScreen.screens.count > 1 {
-            displayWindowController.showWindowOnExtendedDesktop()
+            displayWindowControl?.showWindowOnExtendedDesktop()
         }
     }
 
     @objc func monitorDidChange(notification: NSNotification) {
         if NSScreen.screens.count == 1 {
             print("there is one monitor")
+            displayWindowControl?.window?.close()
         }
         if NSScreen.screens.count > 1 {
             print("there are two monitors")
+            displayWindowControl?.showWindowOnExtendedDesktop()
         }
     }
 }

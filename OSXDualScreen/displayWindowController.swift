@@ -8,7 +8,16 @@
 
 import Cocoa
 
-class displayWindowController: NSWindowController {
+class displayWindowController: NSWindowController, NSWindowDelegate {
+    
+    
+    required init?(coder: NSCoder){
+        super.init(coder: coder)
+    }
+    
+    override init(window: NSWindow?) {
+        super.init(window: window)
+    }
     
     override func windowWillLoad() {
         super.windowWillLoad()
@@ -17,12 +26,19 @@ class displayWindowController: NSWindowController {
     override func windowDidLoad() {
         super.windowDidLoad()
     }
-
+    
+    func windowDidExitFullScreen(_ notification: Notification) {
+        self.window?.close()
+    }
+    
     func showWindowOnExtendedDesktop() {
-        self.window?.setFrame(NSScreen.screens[1].frame, display: true)
-        self.window?.toggleTabBar(self)
-        self.window?.backgroundColor = NSColor(srgbRed: 0, green: 0, blue: 0, alpha: 1)
-        //self.window?.toggleFullScreen(self)
-        self.showWindow(self)
+        if NSScreen.screens.count > 1 {
+            self.window?.setFrame(NSScreen.screens[1].frame, display: true)
+            if (self.window?.styleMask.contains(NSWindow.StyleMask.fullScreen))!  {
+            } else {
+                self.window?.toggleFullScreen(self)
+            }
+            self.showWindow(self)
+        }
     }
 }
